@@ -62,18 +62,23 @@ class MenuController
 
   def view_entry_number
     puts "Please input the entry number"
-    n = gets.chomp
+    selection = gets.chomp
+    n = selection.to_i
     system "clear"
-    if n.to_i > address_book.entries.size || n.to_i <= 0
+    if n <= address_book.entries.size && n > 0
+      puts "Entry number #{n}"
+      puts @address_book.entries[n-1]
+    else
       system "clear"
-      puts "#{n.to_s} is not a valid input"
+      puts "#{selection} is not a valid input"
+      view_entry_number
     end
 
-    address_book.entries.each_with_index do |entry, index|
-      next if index != (n.to_i - 1)
-        puts "Entry number #{n.to_s}"
-        puts entry.to_s
-    end
+    # address_book.entries.each_with_index do |entry, index|
+    #   next if index != (n.to_i - 1)
+        # puts "Entry number " + @address_book.entries[num]
+
+    # end
   end
 
   def create_entry
