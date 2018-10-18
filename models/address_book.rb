@@ -1,4 +1,5 @@
 require_relative 'entry'
+require "csv"
 
 class AddressBook
   attr_reader :entries
@@ -27,4 +28,8 @@ class AddressBook
       entries.delete_at(index)
     end
   end
+
+    def import_from_csv(file_name)
+      #implementation
+    end
 end
