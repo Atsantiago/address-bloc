@@ -73,5 +73,4 @@ RSpec.describe AddressBook do
           check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
         end
     end
-
 end
