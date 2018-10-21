@@ -11,8 +11,8 @@ RSpec.describe AddressBook do
 
   describe "attributes" do
     it "responds to entries" do
-      book = AddressBook.new
       expect(book).to respond_to(:entries)
+      book.import_from_csv("entries.csv")
     end
 
     it "initializes entries as an array" do
