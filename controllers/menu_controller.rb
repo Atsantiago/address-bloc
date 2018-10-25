@@ -206,7 +206,7 @@ class MenuController
 
   def destroy_entries
     puts "Are you sure you want to delete all entries? Yes or No"
-    answer = gets.chomp
+    answer = gets.chomp.downcase
     if answer == "yes"
       address_book.destroy_entries
     else
